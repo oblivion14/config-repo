@@ -1,13 +1,13 @@
 # Test
 example.property: "User Management Server"
 
-#spring:
-#  data:
-#    mongo:
-#      host: "10.20.1.216"
-#      port: 27017
-#      database: "user"
-#      username: "admin"
-#      password: "admin"
+spring:
+  data:
+    mongo:
+      host: "10.20.1.216"
+      port: 27017
+      database: "user"
+      username: "admin"
+      password: "admin"
 #      uri: "mongodb://root:root@localhost:27017/test_db"
 

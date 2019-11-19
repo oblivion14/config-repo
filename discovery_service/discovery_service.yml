@@ -1,0 +1,26 @@
+eureka:
+  datacenter: msp_dev
+  environment: msp_dev
+  client:
+    register-with-eureka: false  # 자신은 Eureka에 등록하지 않음
+    fetch-registry: false # 레지스트리 정보를 로컬에 캐싱하지 않는다
+  server:
+    enableSelfPreservation: true # 자기 보호 모드(네트워크 장애가 발생하여도 서비스 해제를 방지하는 모드)
+    waitTimeInMsWhenSyncEmpty: 5 # 서버가 요청을 받기 전 대기할 초기 시간
+
+logging:
+  path: /tmp/msp/discovery-service
+  file:
+    max-history: 15
+  level:
+    org.springframwork.security: DEBUG
+
+#상위 gradle 파일에서 open-feign 내부의 ribbon library 와 중복(warning 제거)
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
